@@ -1,13 +1,5 @@
 const App = () => {
-  const erro = () => {
-    throw new Error()
-  }
-
-  return (
-    <button onClick={() => erro()} className='App' type='button'>
-      aaaaaa
-    </button>
-  )
+  return <div>aaaaaa</div>
 }
 
 export default App
