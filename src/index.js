@@ -7,7 +7,7 @@ import reportWebVitals from './reportWebVitals'
 
 require('dotenv').config()
 
-if (process.env.REACT_APP_NODE_ENV === 'development') {
+if (process.env.REACT_APP_NODE_ENV === 'production') {
   Sentry.init({
     dsn: process.env.REACT_APP_SENTRY_DSN_URL,
     integrations: [new Integrations.BrowserTracing()],
