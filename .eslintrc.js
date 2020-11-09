@@ -26,5 +26,12 @@ module.exports = {
     'no-param-reassign': 'off',
     'no-console': ['error', { allow: ['tron'] }],
     'react/react-in-jsx-scope': 'off'
+  },
+  settings: {
+    'import/resolver': {
+      node: {
+        paths: ['src']
+      }
+    }
   }
 }
