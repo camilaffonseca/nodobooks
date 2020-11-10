@@ -7,7 +7,7 @@ import styles from './styles'
 const ThemeProviderComponent = ({ children }) => <ThemeProvider theme={styles}>{children}</ThemeProvider>
 
 ThemeProviderComponent.propTypes = {
-  children: PropTypes.element.isRequired
+  children: PropTypes.node.isRequired
 }
 
 export default ThemeProviderComponent
