@@ -1,31 +1,32 @@
-import styled, { css } from 'styled-components'
-import { typography, color, variant } from 'styled-system'
+import styled from 'styled-components'
+import { typography, color, space, variant } from 'styled-system'
 
 const Text = styled.p`
   font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 10px;
-  color: ${({ theme }) => theme?.colors?.texts?.secondary};
+  color: ${({ theme }) => theme.colors.grays.A500};
 
   ${variant({
     variants: {
-      small: css`
-        font-family: 'Open Sans', sans-serif;
-      `,
-      regular: css`
-        font-weight: 500;
-        font-size: 12px;
-      `,
-      big: css`
-        font-weight: 700;
-        font-size: 24px;
-        color: ${({ theme }) => theme?.colors?.text?.primary};
-      `
+      small: {
+        fontFamily: "'Open Sans', sans-serif"
+      },
+      regular: {
+        fontWeight: 500,
+        fontSize: '12px'
+      },
+      big: {
+        fontWeight: 700,
+        fontSize: '24px',
+        color: 'grays.A800'
+      }
     }
   })}
 
   ${typography}
   ${color}
+  ${space}
 `
 
 Text.defaultProps = {
