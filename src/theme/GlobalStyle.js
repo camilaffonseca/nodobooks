@@ -20,6 +20,10 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat', sans-serif;
   }
 
+  .toast {
+    font-size: 16px;
+  }
+
   @media (max-width: ${TABLET_BREAKPOINT}px) {
     :root {
         font-size: 40%;
