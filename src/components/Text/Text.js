@@ -2,7 +2,6 @@ import styled from 'styled-components'
 import { typography, color, space, variant } from 'styled-system'
 
 const Text = styled.p`
-  font-family: 'Montserrat', sans-serif;
   font-weight: 400;
   font-size: 10px;
   color: ${({ theme }) => theme.colors.grays.A500};
