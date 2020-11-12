@@ -42,6 +42,7 @@ const Topbar = styled(Container)`
 
 const MenuIconMobile = styled(Image)`
   display: inline;
+  cursor: pointer;
 
   @media (min-width: ${DESKTOP_BREAKPOINT}px) {
     display: none;
