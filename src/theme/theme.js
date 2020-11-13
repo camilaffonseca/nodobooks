@@ -17,6 +17,7 @@ const colors = {
   },
 
   grays: {
+    A50: '#F7F7F7',
     A100: '#FBFDFF',
     A200: '#EFEEF6',
     A250: '#E2E2E2',
