@@ -1,5 +1,5 @@
 import styled from 'styled-components'
-import { typography, color, space, variant } from 'styled-system'
+import { typography, color, space, variant, layout } from 'styled-system'
 
 const Text = styled.p`
   font-weight: 400;
@@ -26,6 +26,7 @@ const Text = styled.p`
   ${typography}
   ${color}
   ${space}
+  ${layout}
 `
 
 Text.defaultProps = {
