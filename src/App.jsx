@@ -2,7 +2,6 @@ import { BrowserRouter as Router, Switch } from 'react-router-dom'
 import { ToastContainer } from 'react-toastify'
 
 import Routes from 'routes'
-import Topbar from 'components/Topbar'
 
 import { GlobalStyle, ThemeProvider } from 'theme'
 
@@ -13,7 +12,6 @@ const App = () => (
     <GlobalStyle />
     <ToastContainer />
     <Router>
-      <Topbar />
       <Switch>
         <Routes />
       </Switch>
