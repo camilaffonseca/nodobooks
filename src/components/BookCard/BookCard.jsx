@@ -1,44 +1,58 @@
+import { useState } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
+import Helmet from 'react-helmet'
 
 import { LoaderImage } from 'components/Image'
 import Text from 'components/Text'
 import Button from 'components/Button'
 import RatingBar from 'components/RatingBar'
+import BuyModal from 'components/BuyModal'
+
+import t from 'lang'
 
 import { DESKTOP_BREAKPOINT, TABLET_BREAKPOINT } from 'helpers/constants'
 
-const BookCard = ({ cardData, click }) => (
-  <CardContainer>
-    <StyledImage
-      onClick={() => click(cardData?.id)}
-      className='loader-card-image'
-      src={cardData.cover}
-      alt='Book Image'
-    />
-    <Content>
-      <Text mb={2} mt={[0, 3, 2]} variant='small'>
-        {cardData?.author}
-      </Text>
-      <StyledTitle onClick={() => click(cardData?.id)} mb='5px' variant='big' fontSize={4}>
-        {cardData?.title.charAt(0).toUpperCase() + cardData?.title.slice(1)}
-      </StyledTitle>
-      <RatingContainer>
-        <RatingBar percent={Number(cardData?.stars) * 10} />
-        <Text ml='6px' variant='small'>
-          {cardData?.reviews} reviews
-        </Text>
-      </RatingContainer>
-      <StyledDescription mb={5} variant='small'>
-        {cardData?.description}
-      </StyledDescription>
-      <Text my={5} variant='big' fontSize={2}>
-        $ {cardData?.price}
-      </Text>
-      <Button>BUY NOW</Button>
-    </Content>
-  </CardContainer>
-)
+const BookCard = ({ cardData, click }) => {
+  const [showBuyModal, setShowBuyModal] = useState(false)
+  return (
+    <>
+      <Helmet>
+        <title>Bookstore</title>
+      </Helmet>
+      {showBuyModal && <BuyModal bookId={cardData?.id} closeModal={() => setShowBuyModal(false)} />}
+      <CardContainer>
+        <StyledImage
+          onClick={() => click(cardData?.id)}
+          className='loader-card-image'
+          src={cardData.cover}
+          alt='Book Image'
+        />
+        <Content>
+          <Text mb={2} mt={[0, 3, 2]} variant='small'>
+            {cardData?.author}
+          </Text>
+          <StyledTitle onClick={() => click(cardData?.id)} mb='5px' variant='big' fontSize={4}>
+            {cardData?.title.charAt(0).toUpperCase() + cardData?.title.slice(1)}
+          </StyledTitle>
+          <RatingContainer>
+            <RatingBar percent={Number(cardData?.stars) * 10} />
+            <Text ml='6px' variant='small'>
+              {cardData?.reviews} reviews
+            </Text>
+          </RatingContainer>
+          <StyledDescription mb={5} variant='small'>
+            {cardData?.description}
+          </StyledDescription>
+          <Text my={5} variant='big' fontSize={2}>
+            $ {cardData?.price}
+          </Text>
+          <Button onClick={() => setShowBuyModal(true)}>{t('buyNow')}</Button>
+        </Content>
+      </CardContainer>
+    </>
+  )
+}
 
 const Content = styled.div`
   @media (min-width: ${DESKTOP_BREAKPOINT}px) {
