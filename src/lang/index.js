@@ -6,7 +6,7 @@ const languages = { 'pt-BR': ptBR, 'en-US': enUS }
 const currentNavLanguage = navigator.language
 
 const getCurrentAppLang = () => {
-  if (languages[currentNavLanguage] !== -1) {
+  if (languages[currentNavLanguage]) {
     return languages[currentNavLanguage]
   }
   return languages['en-US']

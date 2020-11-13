@@ -5,5 +5,21 @@
   "bookNotResolvedAccess": "We were unable to access this book.",
   "serverError": "Server error!",
   "cantResolveBookList": "The list of books could not be retrieved.",
-  "cantResolveBookListByCategoty": "Could not get the list of books by category."
+  "cantResolveBookListByCategoty": "Could not get the list of books by category.",
+  "buyNow": "Buy now",
+  "name": "Name",
+  "email": "Email",
+  "phone": "Phone",
+  "yourName": "Your name",
+  "yourEmail": "Your email",
+  "yourPhone": "Your phone number",
+  "requiredField": "Required field",
+  "invalidEmail": "Invalid email address",
+  "invalidPhone": "Invalid phone number",
+  "cancel": "Cancel",
+  "send": "Send",
+  "close": "Close",
+  "loading": "loading",
+  "purchaseError": "There was a mistake sending your purchase, try again later.",
+  "purchaseSuccess": "Your purchase was successfully sent! Thank you for using our store."
 }
