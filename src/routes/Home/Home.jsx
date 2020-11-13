@@ -55,7 +55,7 @@ const Home = () => {
         setBookCategories(defaultCategories)
         setCurrentCategoryId(0)
       } catch {
-        toast.error(`${t('serverError')} (Err: CORS Headers API || Offline)`, {
+        toast.error(`${t('serverError')} (Err: CORS Headers API)`, {
           className: 'toast'
         })
       }
