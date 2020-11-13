@@ -1,0 +1,9 @@
+{
+  "copyrightMesage": "Nodo Bookstore e colaboradores individuais. O conteúdo está disponível sob essas licenças.",
+  "search": "Pesquisar",
+  "searchNotPossible": "Não foi possível realizar a busca.",
+  "bookNotResolvedAccess": "Não foi possível acessar este livro.",
+  "serverError": "Problema no servidor!",
+  "cantResolveBookList": "Não foi possível obter a lista de livros.",
+  "cantResolveBookListByCategoty": "Não foi possível obter a lista de livros por categoria."
+}

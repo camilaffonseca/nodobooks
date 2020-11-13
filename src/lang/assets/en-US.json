@@ -1,0 +1,9 @@
+{
+  "copyrightMesage": "Nodo Bookstore and individual contributors. Content is available under these licenses.",
+  "search": "Search",
+  "searchNotPossible": "Could not perform a search.",
+  "bookNotResolvedAccess": "We were unable to access this book.",
+  "serverError": "Server error!",
+  "cantResolveBookList": "The list of books could not be retrieved.",
+  "cantResolveBookListByCategoty": "Could not get the list of books by category."
+}
