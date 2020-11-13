@@ -11,6 +11,10 @@ const Container = styled.div`
   }
 
   @media (min-width: ${DESKTOP_BREAKPOINT}px) {
+    padding: 0 ${({ theme }) => theme?.space[11]}px;
+  }
+
+  @media (min-width: ${DESKTOP_BREAKPOINT + 200}px) {
     padding: 0 ${({ theme }) => theme?.space[13]}px;
   }
 `

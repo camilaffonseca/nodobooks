@@ -1,5 +1,6 @@
 /* eslint-disable no-console */
 import styled from 'styled-components'
+import PropTypes from 'prop-types'
 
 import Image from 'components/Image'
 import Text from 'components/Text'
@@ -8,19 +9,36 @@ import Container from 'components/Container'
 
 import nodoIcon from 'images/nodo-icon.png'
 import menuIcon from 'images/menu-icon.png'
+import closeIcon from 'images/close-icon.png'
 
 import { DESKTOP_BREAKPOINT } from 'helpers/constants'
 
-const TopbarComponent = () => (
+const TopbarComponent = ({
+  toggleNavbarOpen,
+  setToggleNavbarOpen,
+  setCurrentCategoryId,
+  currentCategoryId,
+  searchFetch
+}) => (
   <Topbar>
     <StyledLogo>
-      <MenuIconMobile src={menuIcon} alt='Menu Icon' />
+      {!toggleNavbarOpen && <MenuIconMobile onClick={() => setToggleNavbarOpen(true)} src={menuIcon} alt='Menu Icon' />}
+      {toggleNavbarOpen && (
+        <MenuIconMobile onClick={() => setToggleNavbarOpen(false)} src={closeIcon} alt='Menu Close Icon' />
+      )}
       <LogoIcon src={nodoIcon} alt='Nodo Icon' />
       <StyledTitle variant='big' fontSize='18px' marginLeft={[0, '9px', 5]} color='grays.A100'>
         Bookstore
       </StyledTitle>
     </StyledLogo>
-    <StyledSearch callback={() => console.log('callback')} handleReset={() => console.log('handle reset')} />
+    <StyledSearch
+      currentCategoryId={currentCategoryId}
+      callback={value => {
+        setCurrentCategoryId(-1)
+        searchFetch(value)
+      }}
+      handleReset={() => setCurrentCategoryId(0)}
+    />
   </Topbar>
 )
 
@@ -30,6 +48,9 @@ const Topbar = styled(Container)`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  position: fixed;
+  top: 0;
+  z-index: 3;
 
   @media (min-width: ${DESKTOP_BREAKPOINT}px) {
     height: 116px;
@@ -82,5 +103,13 @@ const StyledSearch = styled(Search)`
     margin-bottom: 0;
   }
 `
+
+TopbarComponent.propTypes = {
+  toggleNavbarOpen: PropTypes.bool.isRequired,
+  setToggleNavbarOpen: PropTypes.func.isRequired,
+  setCurrentCategoryId: PropTypes.func.isRequired,
+  searchFetch: PropTypes.func.isRequired,
+  currentCategoryId: PropTypes.number.isRequired
+}
 
 export default TopbarComponent
