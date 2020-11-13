@@ -1,0 +1,12 @@
+FROM yarnpkg/node-yarn
+
+ENV HOME=/home/app
+WORKDIR $HOME
+
+COPY package.json ./
+RUN npm install
+
+EXPOSE 3000
+
+CMD ["yarn"]
+CMD ["yarn", "start"]
