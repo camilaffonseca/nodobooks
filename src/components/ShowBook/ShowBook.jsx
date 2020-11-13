@@ -2,12 +2,14 @@ import { useState, useEffect } from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
 import { toast } from 'react-toastify'
+import Helmet from 'react-helmet'
 
 import Image from 'components/Image'
 import Text from 'components/Text'
 import Button from 'components/Button'
 import RatingBar from 'components/RatingBar'
 import ContainerComponent from 'components/Container'
+import BuyModal from 'components/BuyModal'
 
 import { getBookById } from 'services/books'
 
@@ -16,8 +18,9 @@ import { DESKTOP_BREAKPOINT, TABLET_BREAKPOINT } from 'helpers/constants'
 import t from 'lang'
 
 const ShowBook = ({ bookId }) => {
-  // eslint-disable-next-line no-unused-vars
   const [currentCard, setCurrentCard] = useState({})
+  const [showBuyModal, setShowBuyModal] = useState(false)
+
   useEffect(() => {
     const fetchCurrentBook = async () => {
       try {
@@ -31,8 +34,14 @@ const ShowBook = ({ bookId }) => {
   }, [])
   return (
     <>
+      {showBuyModal && currentCard?.id + 1 && (
+        <BuyModal bookId={currentCard?.id} closeModal={() => setShowBuyModal(false)} />
+      )}
       {currentCard?.id ? (
         <CardContainer>
+          <Helmet>
+            <title>Bookstore - {currentCard?.title.charAt(0).toUpperCase() + currentCard?.title.slice(1)}</title>
+          </Helmet>
           <Mobile>
             <Container>
               <Text mb={2} mt={[0, 3, 2]} variant='small'>
@@ -61,8 +70,14 @@ const ShowBook = ({ bookId }) => {
               </Text>
             </MibileContainer>
             <MibileContainer>
-              <Button width={[0, '100%', '176px']} height='45px' mt='16px' mb='20px'>
-                BUY NOW
+              <Button
+                onClick={() => setShowBuyModal(true)}
+                width={[0, '100%', '176px']}
+                height='45px'
+                mt='16px'
+                mb='20px'
+              >
+                {t('buyNow')}
               </Button>
             </MibileContainer>
             <Container>
@@ -91,8 +106,8 @@ const ShowBook = ({ bookId }) => {
               <Text mt='16px' variant='big' fontSize={2}>
                 $ {currentCard?.price}
               </Text>
-              <Button width='176px' height='45px' mt='16px' mb='20px'>
-                BUY NOW
+              <Button onClick={() => setShowBuyModal(true)} width='176px' height='45px' mt='16px' mb='20px'>
+                {t('buyNow')}
               </Button>
               <StyledDescription mb={5} variant='small'>
                 {currentCard?.description}
