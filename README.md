@@ -58,4 +58,3 @@ Formata o código com padrão predefinido
 ### `yarn eslint`
 
 Utilizado para verificar a sintaxe e os padrões de código do projeto
-
