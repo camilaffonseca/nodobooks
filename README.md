@@ -2,7 +2,9 @@
 
 #### Importante!
 
-**Esta documentação está em desenvolvimento.**
+- **Esta documentação está em desenvolvimento.**
+- **Até o momento desta edição a API está respondendo com um erro de CORS (Cross-origin resource sharing)**
+- **Até o momento desta edição a API está respondendo Not Found para o livro de índice 0**
 
 <br />
 <br />
