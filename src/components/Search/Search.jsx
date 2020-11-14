@@ -12,6 +12,8 @@ import { useDebounce } from 'hooks'
 import searchIconDark from 'images/search-icon-dark.png'
 import searchIconLight from 'images/search-icon-light.png'
 
+import t from 'lang'
+
 let handleFirstChange = false
 
 const SearchComponent = ({ callback, handleReset, ...props }) => {
@@ -27,11 +29,11 @@ const SearchComponent = ({ callback, handleReset, ...props }) => {
         if (!searchValue.length) {
           handleReset()
         } else {
-          callback()
+          callback(debouncedValue)
         }
       }
     } catch {
-      toast.error('Não foi possível realizar a busca.', { className: 'toast' })
+      toast.error(t('searchNotPossible'), { className: 'toast' })
     }
   }, [debouncedValue])
 
@@ -39,7 +41,7 @@ const SearchComponent = ({ callback, handleReset, ...props }) => {
     <SearchContainer {...props}>
       <StyledSearchIconDark src={searchIconDark} alt='Search Icon Dark' />
       <StyledSearchIconLight src={searchIconLight} alt='Search Icon Light' />
-      <Search onChange={e => setSearchValue(e?.target?.value)} placeholder='Search' />
+      <Search onChange={e => setSearchValue(e?.target?.value)} placeholder={t('search')} />
     </SearchContainer>
   )
 }

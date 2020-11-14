@@ -1,0 +1,46 @@
+---
+name: Book Card
+route: /bookcard
+---
+
+#### Importante!
+
+**Esta documentação está em desenvolvimento.**
+
+# BookCard
+
+#### features:
+
+- Show Book data in home page with a simple card.
+
+#### props
+
+- cardData
+
+Needs one object like this:
+
+```
+{
+  "id": 1,
+  "price": 4773,
+  "cover": "https://picsum.photos/212/300",
+  "author": "Angelita Atkinson",
+  "title": "est esse ea incididunt sunt",
+  "description": "Est nostrud commodo incididunt incididunt anim ex proident sint ex dolore. Velit nisi ipsum sint nisi ullamco in. Occaecat pariatur ut tempor nisi labore exercitation minim ea aliqua incididunt magna velit anim dolore. Lorem sint ex nisi mollit non veniam labore qui consectetur qui do eu laboris laborum. Velit commodo Lorem nostrud id excepteur est dolor ex dolor ut occaecat cillum excepteur.",
+  "reviews": 84,
+  "stars": 1,
+  "category": 10
+}
+```
+
+- click
+
+Callback function to open ShowBook view with book details.
+
+## Basic usage
+
+```
+<ThemeProvider>
+  <BookCard cardData=... click=... />
+</ThemeProvider>
+```

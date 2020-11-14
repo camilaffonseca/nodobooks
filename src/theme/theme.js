@@ -8,8 +8,6 @@ const fontSizes = [10, 12, 13, 14, 16, 24, 32, 40, 48]
 
 const fontWeights = [400, 500, 600, 700]
 
-const lineHeights = [14, 16, 18, 22, 30, 36]
-
 const radii = [0, 2, 4, 8, 10]
 
 const colors = {
@@ -19,6 +17,7 @@ const colors = {
   },
 
   grays: {
+    A50: '#F7F7F7',
     A100: '#FBFDFF',
     A200: '#EFEEF6',
     A250: '#E2E2E2',
@@ -41,4 +40,4 @@ const colors = {
   }
 }
 
-export default { breakpoints, space, fontSizes, fontWeights, lineHeights, radii, colors }
+export default { breakpoints, space, fontSizes, fontWeights, radii, colors }
