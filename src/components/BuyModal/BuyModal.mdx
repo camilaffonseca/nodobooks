@@ -1,0 +1,27 @@
+---
+name: BuyModal
+route: /buymodal
+---
+
+#### Importante!
+
+**Esta documentação está em desenvolvimento.**
+
+# BuyModal
+
+### features:
+
+- Modal to manage Book buy process.
+
+### props
+
+- bookId: Its the book id number. Is required.
+- closeModal: A function called when user's click in close button. Is required.
+
+## Basic usage
+
+```
+<ThemeProvider>
+  <BuyModal bookId={2} closeModal={() => alert('Closed!')} />
+</ThemeProvider>
+```

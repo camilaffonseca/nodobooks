@@ -1,0 +1,28 @@
+---
+name: Search
+route: /search
+---
+
+#### Importante!
+
+**Esta documentação está em desenvolvimento.**
+
+# Search
+
+### features:
+
+- Styled Search field to use anywhere!
+- Debounced search callback.
+
+### props
+
+- callback: Call the passed function when user stop tipping.
+- handleReset: Call yhe passed function when user clear all search input.
+
+## Basic usage
+
+```
+<ThemeProvider>
+  <Search callback={val => alert(val)} handleReset={() => alert('its clear!')} />
+</ThemeProvider>
+```

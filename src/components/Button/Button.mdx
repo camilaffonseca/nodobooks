@@ -1,0 +1,33 @@
+---
+name: Button
+route: /button
+---
+
+import Button from './Button'
+import { ThemeProvider } from 'theme'
+import { Playground } from 'docz'
+
+#### Importante!
+
+**Esta documentação está em desenvolvimento.**
+
+# Button
+
+### features:
+
+- Styled button to use anywhere!
+
+### props
+
+- outlined: if true, the button receive outlined style. Default: true
+- variant: change style of button. Available options: primary, secondary
+
+## Basic usage
+
+<Playground>
+  <ThemeProvider>
+    <Button width='250px' ml='20px' onClick={() => alert('hey!')} outlined={false}>Foo</Button>
+    <Button width='250px' ml='20px' onClick={() => alert('hey!')} variant='primary'>Foo</Button>
+    <Button width='250px' ml='20px' onClick={() => alert('hey!')} variant='secondary'>Foo</Button>
+  </ThemeProvider>
+</Playground>
