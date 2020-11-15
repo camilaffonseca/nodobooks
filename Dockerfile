@@ -1,13 +1,14 @@
-FROM yarnpkg/node-yarn as build
+FROM node:10-alpine as build
 
 ENV HOME=/home/app
 WORKDIR $HOME
 
 COPY package.json ./
-RUN yarn
+RUN apk add --update nodejs npm
+RUN npm install --only=prod --silent
 
 COPY . /home/app
-RUN yarn build
+RUN npm run build
 
 # production environment
 FROM nginx:1.16.0-alpine
