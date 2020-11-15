@@ -152,7 +152,7 @@ const StyledImage = styled(Image)`
   }
 
   @media (min-width: ${DESKTOP_BREAKPOINT}px) {
-    margin-top: 115px;
+    margin-top: 115px !important;
     height: 57vw;
   }
 
